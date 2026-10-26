@@ -4,6 +4,20 @@
 
 Lumen is an ambient AI companion designed for blind and low-vision users. Built entirely on AWS, it processes live camera and audio feeds using serverless and streaming technologies to provide real-time spatial awareness, hazard detection, and scene understanding. The system utilizes a multi-agent orchestration architecture via the Strands Agents SDK and Amazon Bedrock, backed by a persistent graph-based spatial memory on Amazon Neptune to build a continuous, reliable understanding of a user's environment.
 
+## Development Status
+**Current Focus: AWS Cloud Foundations (Week 1)**
+
+LUMEN is currently in the early planning and learning stage. Development is progressing through foundational cloud concepts before application implementation begins.
+
+The initial learning phase covers:
+- AWS account security and MFA
+- Billing awareness and cost monitoring
+- IAM users, groups, roles, and policies
+- AWS Shared Responsibility Model
+- AWS CLI v2 setup and authentication
+
+*Note: These activities are part of the project's learning roadmap. They do not imply that LUMEN's application infrastructure has been fully deployed. Progress will be documented as individual milestones are completed.*
+
 ## High-Level Architecture Overview
 
 This diagram represents the foundational, high-level data flow for Phase 1. As the project matures, this will be expanded in `/docs/ARCHITECTURE.md` to include granular MLOps pipelines, detailed CI/CD workflows, and robust Observability layers.
@@ -93,14 +107,17 @@ Wraps up Phase 1 by implementing custom hazard-detection models via Amazon SageM
 
 ```text
 lumen/
-├── .github/             # CI/CD pipelines (GitHub Actions, Trivy)
-├── docs/                # Architecture, design docs, and weekly retrospectives
-├── infra/               # Infrastructure as Code (Terraform / AWS CDK)
-├── src/                 # Application source code (agents, ETL, perception logic)
-├── tests/               # Test suites (pytest, Locust load tests)
+├── .github/             # CI/CD workflows and repository automation
+├── docs/
+│   ├── learning/        # Learning notes and weekly retrospectives
+│   └── ...              # Architecture and design documentation
+├── infra/
+│   └── ...              # Infrastructure as Code
+├── src/                 # Application source code
+├── tests/               # Automated tests
 ├── CHANGELOG.md         # Version history
 ├── CODE_OF_CONDUCT.md   # Community guidelines
-├── CONTRIBUTING.md      # Setup and contribution workflow
+├── CONTRIBUTING.md      # Contribution workflow
 ├── LICENSE              # MIT License
 ├── README.md            # Project overview
 └── SECURITY.md          # Vulnerability reporting guidelines
@@ -114,19 +131,25 @@ Please refer to [`CONTRIBUTING.md`](CONTRIBUTING.md) for current repository guid
 
 ## Documentation Index
 
-Detailed design decisions and architectural choices are recorded in the `/docs` directory as the project evolves:
+Documentation will evolve alongside implementation. Completed documents reflect verified decisions and experiments; planned documents remain unchecked until they are created.
 
-* [ ] [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — Full System Architecture Details
-* [ ] `docs/rag-notes.md` — RAG & Chunking Strategy
-* [ ] `docs/data-lake-design.md` — S3 Zones, Partitioning & Lake Formation
-* [ ] `docs/streaming-design.md` — Kinesis Hot/Durable Paths
-* [ ] `docs/perception-eval.md` — Fast/Slow Path & Multimodal Evaluation Matrix
-* [ ] `docs/memory-design.md` — DynamoDB Access Patterns & Neptune Promotion Logic
-* [ ] `docs/cicd-design.md` — GitHub Actions OIDC & CodePipeline Architecture
-* [ ] `docs/infra-design.md` — IaC Modules, Remote State & Drift Detection
-* [ ] `docs/ml-design.md` — SageMaker Pipeline, MLflow & Drift Monitoring
-* [ ] `docs/safety-design.md` — Guardrails, Confidence Thresholds & A2I Escalation
-* [ ] `docs/observability-design.md` — SLOs, Error Budgets, Prometheus/Grafana & Chaos Testing
+### Learning Notes
+- [ ] `docs/learning/aws-cloud-foundations.md` — AWS learning roadmap and weekly progress.
+- [x] `docs/learning/aws-iam-basics.md` — IAM concepts, policies, roles, and practical exercises.
+- [x] `docs/learning/aws-shared-responsibility.md` — AWS security responsibilities.
+
+### Architecture and Design
+- [ ] [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — Detailed system architecture and component interactions.
+- [ ] `docs/rag-notes.md` — RAG & Chunking Strategy
+- [ ] `docs/data-lake-design.md` — S3 Zones, Partitioning & Lake Formation
+- [ ] `docs/streaming-design.md` — Kinesis Hot/Durable Paths
+- [ ] `docs/perception-eval.md` — Fast/Slow Path & Multimodal Evaluation Matrix
+- [ ] `docs/memory-design.md` — DynamoDB Access Patterns & Neptune Promotion Logic
+- [ ] `docs/cicd-design.md` — GitHub Actions OIDC & CodePipeline Architecture
+- [ ] `docs/infra-design.md` — IaC Modules, Remote State & Drift Detection
+- [ ] `docs/ml-design.md` — SageMaker Pipeline, MLflow & Drift Monitoring
+- [ ] `docs/safety-design.md` — Guardrails, Confidence Thresholds & A2I Escalation
+- [ ] `docs/observability-design.md` — SLOs, Error Budgets, Prometheus/Grafana & Chaos Testing
 
 ## License
 
